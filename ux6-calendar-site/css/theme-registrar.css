@@ -1,0 +1,126 @@
+/* Style 2 — "Registrar": a calm, dense campus-portal tool. Navy bar, white panels, IBM Plex. */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap");
+
+:root {
+  --bg: #f1f3f6;
+  --surface: #ffffff;
+  --surface-2: #eef1f5;
+  --ink: #142033;
+  --ink-2: #4f5b6d;
+  --ink-3: #7a8494;
+  --line: #d8dde5;
+  --line-strong: #a9b2bf;
+  --accent: #0b57a6;
+  --on-accent: #fff;
+  --warn: #b3261e;
+  --warn-bg: #fdecea;
+  --ok: #17703f;
+  --ok-bg: #e5f4ea;
+  --focus: #0b57a6;
+  --radius: 6px;
+  --radius-sm: 4px;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --hour: 46px;
+  --shadow: 0 12px 32px rgba(15, 30, 60, .22);
+  --art-ink: rgba(255, 255, 255, .22);
+  --cat-academic: #1f5fb8;
+  --cat-athletic: #1b7f54;
+  --cat-cultural: #c0571b;
+  --cat-grassroots: #85690a;
+  --cat-leisure: #7445b0;
+  --cat-media: #c03358;
+  --cat-other: #5c6878;
+  --class-bg: #e7ebf1;
+  --class-ink: #2c3a50;
+  --other-bg: #ffffff;
+}
+
+body { font-size: 14.5px; }
+
+.app-header { background: #0f2340; border-bottom: 0; color: #fff; }
+.app-header-inner { height: 56px; }
+.brand-mark { background: #fff; color: #0f2340; border-radius: 4px; font-size: 17px; width: 30px; height: 30px; }
+.brand-name { font-size: 17px; font-weight: 600; }
+.brand-sub { color: #a8b8d0; }
+.main-nav { align-self: stretch; }
+.main-nav a { color: #c7d3e6; border-radius: 0; display: flex; align-items: center; padding: 0 14px; border-bottom: 3px solid transparent; border-top: 3px solid transparent; }
+.main-nav a:hover { background: rgba(255, 255, 255, .08); color: #fff; }
+.main-nav a[aria-current] { color: #fff; border-bottom-color: #7fb2ff; }
+.account .btn { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .5); }
+.account .btn:hover { background: rgba(255, 255, 255, .12); }
+.account-chip { border-color: rgba(255, 255, 255, .35); color: #fff; }
+.avatar { background: #7fb2ff; color: #0f2340; }
+
+.page { padding-top: 22px; }
+.page-head { margin-bottom: 16px; }
+.page-head h1 { font-size: 28px; font-weight: 600; }
+.eyebrow { font-size: 12.5px; font-weight: 500; }
+.section-title { font-size: 15px; font-weight: 600; }
+.filter-title { font-size: 11.5px; font-weight: 600; letter-spacing: .06em; }
+
+.btn { min-height: 36px; padding: 7px 14px; font-weight: 500; border-color: var(--line-strong); }
+.btn-primary { font-weight: 600; }
+.btn-primary:hover { filter: none; background: #094a8d; }
+.btn-small { min-height: 30px; }
+.notice-cta { background: #e8f1fb; border-color: #b9d3f0; }
+
+.tag { border-radius: 3px; font-size: 11.5px; padding: 3px 6px; background: var(--surface-2); border-color: transparent; color: var(--ink-2); }
+.tag-free { background: var(--ok-bg); color: var(--ok); border-color: transparent; }
+.tag-reg { background: #fff4d6; color: #6b5200; border-color: transparent; }
+.tag-saved { border-color: transparent; }
+.tag-clash { border-color: transparent; font-weight: 600; }
+.tag-missing { background: transparent; }
+
+/* filters sit in a panel */
+.filters { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 14px 16px; gap: 16px; }
+.check, .radio { font-size: 13.5px; }
+
+/* events as a compact table-like list inside a panel */
+/* overflow: clip (not hidden) so the sticky day headers stick to the page, not to this panel */
+.ev-groups { gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: clip; }
+.ev-group-head { background: var(--surface-2); padding: 7px 14px; margin: 0; font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--line); position: sticky; top: 56px; z-index: 1; }
+.ev-group-head .rel { color: var(--accent); }
+.ev-list-flat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.ev-row { grid-template-columns: 48px 84px minmax(0, 1fr) 16px; padding: 10px 14px; gap: 14px; }
+.ev-row:hover { background: #f5f8fc; }
+.ev-group:last-child .ev-list > li:last-child .ev-row { border-bottom: 0; }
+.ev-art { width: 84px; height: 56px; border-radius: 3px; }
+.ev-day { font-size: 21px; font-weight: 600; }
+.ev-title { font-size: 15.5px; font-weight: 600; color: var(--accent); }
+.ev-row:hover .ev-title { text-decoration: underline; }
+.ev-club { font-weight: 500; }
+.ev-meta { font-size: 13px; }
+
+.pick { box-shadow: 0 1px 2px rgba(15, 30, 60, .08); }
+.pick:hover { border-color: var(--accent); }
+.pick-title { font-size: 15px; font-weight: 600; color: var(--accent); }
+
+.club-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+.club-card { box-shadow: 0 1px 2px rgba(15, 30, 60, .06); }
+.club-card:hover { border-color: var(--accent); }
+.club-name { font-size: 15.5px; font-weight: 600; color: var(--accent); }
+.mono { border-radius: 4px; font-size: 11.5px; font-weight: 700; }
+
+/* calendar */
+.cal-title { font-size: 19px; font-weight: 600; }
+.cal-body { box-shadow: 0 1px 2px rgba(15, 30, 60, .06); }
+.seg button { padding: 6px 14px; font-weight: 500; }
+.wk-num { font-size: 17px; font-weight: 600; width: 30px; height: 30px; }
+.wk-dow { font-size: 11px; }
+.blk { border-radius: 3px; }
+.blk-mine { box-shadow: none; }
+.side-panel, .panel { box-shadow: 0 1px 2px rgba(15, 30, 60, .06); }
+.side-panel h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); }
+
+/* sheets */
+.detail-body h2 { font-size: 24px; font-weight: 600; }
+.facts { background: var(--surface-2); border: 0; border-radius: var(--radius-sm); padding: 14px 16px; }
+.facts dt { font-size: 11px; }
+.facts dd { font-size: 14px; }
+.detail-actions { background: var(--surface-2); }
+.filter-chip { background: #e8f1fb; border-color: #b9d3f0; color: #0b3f78; }
+.interest[aria-pressed="true"] { background: #e8f1fb; color: #0b3f78; border-color: #7fa9db; }
+.app-footer { background: var(--surface); }
+.art-label { font-weight: 600; font-size: 18px; }
