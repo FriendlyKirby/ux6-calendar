@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>(name tbd) — UBC clubs &amp; events</title>
+  <meta name="description" content="CPSC 344 Team UX6 demo prototype: find UBC club events, discover clubs, and check them against your class schedule.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#view">Skip to content</a>
+
+  <header class="app-header">
+    <div class="app-header-inner">
+      <a class="brand" href="#/calendar" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">?</span>
+        <span class="brand-text"><span class="brand-name">(name tbd)</span><span class="brand-sub">UBC clubs &amp; events</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#/calendar" data-route="calendar">Calendar</a>
+        <a href="#/events" data-route="events">Events</a>
+        <a href="#/clubs" data-route="clubs">Clubs</a>
+      </nav>
+      <div class="account" id="account"></div>
+    </div>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <footer class="app-footer">
+    <div class="app-footer-inner">
+      <p class="footer-note">CPSC 344 · Team UX6 · Demo prototype. Clubs and events are made up; club categories follow the AMS Clubs Directory.</p>
+      <div class="footer-tools">
+        <button type="button" class="link-btn" data-action="reset-demo">Reset demo</button>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="sheet" class="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-inner" id="sheet-inner"></div>
+  </dialog>
+
+  <dialog id="signin" class="sheet sheet-small" aria-labelledby="signin-title" aria-describedby="signin-description">
+    <form method="dialog" class="signin-form" id="signin-form">
+      <h2 id="signin-title">Sign in</h2>
+      <p class="muted" id="signin-description"></p>
+      <label class="field">
+        <span>Display name</span>
+        <input name="name" autocomplete="nickname" required maxlength="40" placeholder="e.g. Jordan" autofocus>
+      </label>
+      <p class="hint">Use the same name to return to your account on this browser.</p>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" value="ok">Continue</button>
+        <button type="submit" class="btn" value="cancel" formnovalidate>Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="interests-dialog" class="sheet interests-dialog" aria-labelledby="interests-title" aria-describedby="interests-description">
+    <form method="dialog" class="interests-form">
+      <h2 id="interests-title" tabindex="-1" autofocus>What are you interested in?</h2>
+      <p id="interests-description"></p>
+      <div class="interest-list" id="interests-options" role="group" aria-label="Interests"></div>
+      <p class="hint" id="interests-count" aria-live="polite"></p>
+      <div class="form-actions">
+        <button type="submit" class="btn" value="skip">Skip for now</button>
+        <button type="submit" class="btn btn-primary" value="apply">Show matching events</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toast-region" id="toasts" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
